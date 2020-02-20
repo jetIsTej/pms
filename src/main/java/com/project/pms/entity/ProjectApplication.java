@@ -5,14 +5,16 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.util.UUID;
+
 @Table(value = "project_app")
 public class ProjectApplication {
-    @PrimaryKey("proj_app_id")
-    private Integer projectApplicationId;
+    @PrimaryKey("proj_app_uuid")
+    private UUID projectApplicationUUID;
     @Column("proj_app_name")
-    private String applicationName;
+    private String projectApplicationName;
     @Column("proj_acc_name")
-    private String accountName;
+    private String projectAccountName;
     @Column("proj_location")
     private String location;
     @Column("proj_app_start_date")
@@ -34,28 +36,28 @@ public class ProjectApplication {
     @Column("proj_tl_lname")
     private String projectTeamLeadLastName;
 
-    public Integer getProjectApplicationId() {
-        return projectApplicationId;
+    public UUID getProjectApplicationUUID() {
+        return projectApplicationUUID;
     }
 
-    public void setProjectApplicationId(Integer projectApplicationId) {
-        this.projectApplicationId = projectApplicationId;
+    public void setProjectApplicationUUID(UUID projectApplicationUUID) {
+        this.projectApplicationUUID = projectApplicationUUID;
     }
 
-    public String getApplicationName() {
-        return applicationName;
+    public String getProjectApplicationName() {
+        return projectApplicationName;
     }
 
-    public void setApplicationName(String applicationName) {
-        this.applicationName = applicationName;
+    public void setProjectApplicationName(String projectApplicationName) {
+        this.projectApplicationName = projectApplicationName;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getProjectAccountName() {
+        return projectAccountName;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setProjectAccountName(String projectAccountName) {
+        this.projectAccountName = projectAccountName;
     }
 
     public String getLocation() {

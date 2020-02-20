@@ -14,7 +14,7 @@ import org.springframework.data.cassandra.core.mapping.SimpleUserTypeResolver;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 @Configuration
-@EnableCassandraRepositories(basePackages = {"com.project.pms.entity"})
+@EnableCassandraRepositories(basePackages = {"com.project.pms.dao.repositories"})
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Autowired

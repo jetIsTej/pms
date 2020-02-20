@@ -3,6 +3,7 @@ package com.project.pms.entity;
 
 import java.math.BigInteger;
 import java.util.Set;
+import java.util.UUID;
 
 import com.datastax.driver.core.DataType;
 import com.datastax.driver.core.LocalDate;
@@ -13,8 +14,8 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 @Table(value = "employee")
 public class Employee {
-    @PrimaryKey("emp_number")
-    private Integer employeeNumber;
+    @PrimaryKey("emp_uuid")
+    private UUID employeeUUID;
     @Column("cpny_emp_id")
     private Integer companyEmployeeId;
     @Column("emp_first_name")
@@ -47,12 +48,12 @@ public class Employee {
     @Column("emp_curr_proj_app_billable")
     private boolean currentProjectApplicationBillable;
 
-    public Integer getEmployeeNumber() {
-        return employeeNumber;
+    public UUID getEmployeeUUID() {
+        return employeeUUID;
     }
 
-    public void setEmployeeNumber(Integer employeeNumber) {
-        this.employeeNumber = employeeNumber;
+    public void setEmployeeUUID(UUID employeeUUID) {
+        this.employeeUUID = employeeUUID;
     }
 
     public Integer getCompanyEmployeeId() {
