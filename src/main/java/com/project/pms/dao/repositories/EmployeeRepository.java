@@ -13,8 +13,10 @@ import java.util.UUID;
 public interface EmployeeRepository extends CrudRepository<Employee, UUID> {
     Optional<Employee> findByEmployeeUUID(UUID employeeUUID);
     Optional<Employee> findByCompanyEmployeeId(Integer companyEmployeeId);
-    List<Employee> findByEmpFirstName(String firstName);
-    Slice<Employee> findByEmpFirstName(String firstName, Pageable pageRequest);
-    List<Employee> findByEmpFirstNameLike(String nameExpression);
+    List<Employee> findByEmpFirstNameLike(String firstNameExpression);
+    Slice<Employee> findByEmpFirstNameLike(String firstName, Pageable pageRequest);
+    List<Employee> findByEmpLastNameLike(String lastNameExpression);
+    List<Employee> findByEmployeeDesignationLike(String employeeDesignationExpression);
+    List<Employee> findByCurrentProjectApplicationId(Integer currentProjectApplicationId);
     List<Employee> findAll();
 }

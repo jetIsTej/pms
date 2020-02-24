@@ -1,4 +1,13 @@
 package com.project.pms.service;
 
-public interface ProjectApplicationSearchService {
+import com.project.pms.entity.ProjectApplication;
+
+import java.util.List;
+
+public interface ProjectApplicationSearchService extends SearchService {
+    List<ProjectApplication> searchByProjectAccountName(String projectAccountName);
+    List<ProjectApplication> searchByProjectManagerFirstName(String projectMangerFirstName);
+    List<ProjectApplication> searchByScrumMasterFirstName(String scrumMasterFirstName);
+    List<ProjectApplication> searchByTeamLeadFirstName(String teamLeadFirstName);
+    ProjectApplication searchByProjectApplicationName(String projectApplicationName);
 }

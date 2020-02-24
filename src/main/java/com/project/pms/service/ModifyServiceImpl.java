@@ -1,4 +1,38 @@
 package com.project.pms.service;
 
-public class ModifyServiceImpl {
+import com.project.pms.entity.Employee;
+import com.project.pms.entity.ProjectApplication;
+
+import java.util.UUID;
+
+public class ModifyServiceImpl implements ModifyService {
+    @Override
+    public void addProjectApplicaitonDetails(ProjectApplication projectApplication) {
+
+    }
+
+    @Override
+    public void addEmployeeDetails(Employee employee) {
+
+    }
+
+    @Override
+    public void updateProjectApplicationDetails(ProjectApplication projectApplication) {
+
+    }
+
+    @Override
+    public void updateEmployeeDetails(Employee employee) {
+
+    }
+
+    @Override
+    public boolean deleteProjectApplicationDetailsByUUID(UUID projectApplicationUUID) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteEmployeeDetailsByUUID(UUID employeeUUID) {
+        return false;
+    }
 }

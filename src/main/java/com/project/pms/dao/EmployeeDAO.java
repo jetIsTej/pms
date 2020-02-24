@@ -24,8 +24,20 @@ public class EmployeeDAO {
         return employeeRepository.findAll();
     }
 
-    public List<Employee> getEmployeesByFirstName(String employeeFirstName){
-        return employeeRepository.findByEmpFirstName(employeeFirstName);
+    public List<Employee> getEmployeesByFirstName(String employeeFirstNameExpression){
+        return employeeRepository.findByEmpFirstNameLike(employeeFirstNameExpression);
+    }
+
+    public List<Employee> getEmployeesByLastName(String employeeLastNameExpression){
+        return employeeRepository.findByEmpLastNameLike(employeeLastNameExpression);
+    }
+
+    public List<Employee> getEmployeesByDesignation(String employeeDesignationExpression){
+        return employeeRepository.findByEmployeeDesignationLike(employeeDesignationExpression);
+    }
+
+    public List<Employee> getEmployeesByCurrentProjectApplicationId(Integer currentProjectApplicationId){
+        return employeeRepository.findByCurrentProjectApplicationId(currentProjectApplicationId);
     }
 
     //Single results

@@ -11,6 +11,8 @@ import java.util.UUID;
 public class ProjectApplication {
     @PrimaryKey("proj_app_uuid")
     private UUID projectApplicationUUID;
+    @Column("proj_app_id")
+    private Integer projectApplicationId;
     @Column("proj_app_name")
     private String projectApplicationName;
     @Column("proj_acc_name")
@@ -42,6 +44,14 @@ public class ProjectApplication {
 
     public void setProjectApplicationUUID(UUID projectApplicationUUID) {
         this.projectApplicationUUID = projectApplicationUUID;
+    }
+
+    public Integer getProjectApplicationId() {
+        return projectApplicationId;
+    }
+
+    public void setProjectApplicationId(Integer projectApplicationId) {
+        this.projectApplicationId = projectApplicationId;
     }
 
     public String getProjectApplicationName() {

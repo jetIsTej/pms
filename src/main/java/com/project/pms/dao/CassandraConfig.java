@@ -1,5 +1,6 @@
 package com.project.pms.dao;
 
+import com.datastax.driver.core.Cluster;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,11 +26,17 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
         return environment.getProperty("spring.data.cassandra.keyspace-name");
     }
 
+    @Override
+    protected boolean getMetricsEnabled() {
+        return false;
+    }
+
     @Bean
     public CassandraClusterFactoryBean cluster(){
         CassandraClusterFactoryBean cluster = new CassandraClusterFactoryBean();
         cluster.setContactPoints(environment.getProperty("spring.data.cassandra.contact-points"));
         cluster.setPort(Integer.parseInt(environment.getProperty("spring.data.cassandra.port")));
+        cluster.setJmxReportingEnabled(false);
         return cluster;
     }
 
