@@ -4,6 +4,7 @@ import com.project.pms.dao.repositories.ProjectApplicationRepository;
 import com.project.pms.entity.ProjectApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.CassandraOperations;
+import org.springframework.data.cassandra.core.cql.CqlTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,6 +19,10 @@ public class ProjectApplicationDAO {
 
     @Autowired
     private ProjectApplicationRepository projectApplicationRepository;
+
+    private CqlTemplate getCqlTemplate(){
+        return (CqlTemplate)cassandraTemplate.getCqlOperations();
+    }
 
     // List results
     public List<ProjectApplication> getAllProjectApplications(){
@@ -69,4 +74,9 @@ public class ProjectApplicationDAO {
         return false;
     }
 
+    public Integer getTotalProjectApplicationsCount() {
+        String totalProjectApplicationsCount = "select count(*) from project_app";
+        Long countValue = getCqlTemplate().queryForObject(totalProjectApplicationsCount, Long.class);
+        return countValue.intValue();
+    }
 }

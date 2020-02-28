@@ -40,6 +40,11 @@ public class ProjectApplicationSearchServiceImpl implements ProjectApplicationSe
     }
 
     @Override
+    public Integer getTotalProjectApplications() {
+        return projectApplicationDAO.getTotalProjectApplicationsCount();
+    }
+
+    @Override
     public List<ProjectApplication> getAll() {
         return projectApplicationDAO.getAllProjectApplications();
     }

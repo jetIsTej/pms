@@ -10,4 +10,6 @@ public interface ProjectApplicationSearchService extends SearchService {
     List<ProjectApplication> searchByScrumMasterFirstName(String scrumMasterFirstName);
     List<ProjectApplication> searchByTeamLeadFirstName(String teamLeadFirstName);
     ProjectApplication searchByProjectApplicationName(String projectApplicationName);
+
+    Integer getTotalProjectApplications();
 }

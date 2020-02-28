@@ -9,4 +9,8 @@ public interface EmployeeSearchService extends SearchService{
     List<Employee> searchByEmployeeLastName(String partialEmployeeLastName);
     List<Employee> searchByEmployeeDesignation(String partialEmployeeDesignation);
     List<Employee> searchByCurrentProjectApplicationId(Integer currentProjectApplicationId);
+
+    Integer getTotalEmployees();
+    Integer getTotalBilledEmployees();
+    Integer getTotalUnbilledEmployees();
 }

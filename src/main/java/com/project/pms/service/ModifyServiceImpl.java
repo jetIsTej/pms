@@ -2,9 +2,11 @@ package com.project.pms.service;
 
 import com.project.pms.entity.Employee;
 import com.project.pms.entity.ProjectApplication;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public class ModifyServiceImpl implements ModifyService {
     @Override
     public void addProjectApplicaitonDetails(ProjectApplication projectApplication) {

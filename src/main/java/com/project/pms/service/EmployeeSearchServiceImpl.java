@@ -35,6 +35,21 @@ public class EmployeeSearchServiceImpl implements EmployeeSearchService {
     }
 
     @Override
+    public Integer getTotalEmployees() {
+        return employeeDAO.getTotalEmployeesCount();
+    }
+
+    @Override
+    public Integer getTotalBilledEmployees() {
+        return employeeDAO.getTotalBilledEmployeesCount();
+    }
+
+    @Override
+    public Integer getTotalUnbilledEmployees() {
+        return employeeDAO.getTotalUnbilledEmployeesCount();
+    }
+
+    @Override
     public List<Employee> getAll() {
         return employeeDAO.getAllEmployees();
     }

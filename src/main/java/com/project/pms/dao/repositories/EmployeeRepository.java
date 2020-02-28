@@ -19,4 +19,7 @@ public interface EmployeeRepository extends CrudRepository<Employee, UUID> {
     List<Employee> findByEmployeeDesignationLike(String employeeDesignationExpression);
     List<Employee> findByCurrentProjectApplicationId(Integer currentProjectApplicationId);
     List<Employee> findAll();
+
+    @Override
+    long count();
 }
